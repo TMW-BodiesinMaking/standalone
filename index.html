@@ -883,7 +883,7 @@ perchance.org funktioniert aber am besten auf Englisch. Übrigens wie jede ander
 </button>
 <div class="quiz-result"></div>
 
-<h3>Gib deinem Character ein paar Stats! </h3>
+<h3>Stell den Charakter vor!! &#128064 </h3>
 <label class="field-label" for="characterName">
       Name deines Wrestling-Charakters:
     </label>
@@ -896,6 +896,29 @@ perchance.org funktioniert aber am besten auf Englisch. Übrigens wie jede ander
       Special Move / Superkraft:
     </label>
 <textarea class="progress-on-keyup" id="specialMove" placeholder="Was ist die besondere Fähigkeit deiner Figur?"></textarea>
+<div id="stats-widget">
+</br>
+<h3>Gib deinem Character ein paar Stats (also Fähigkeiten)!&#128526;&#128123;&#129312</h3>
+
+  &#128131<strong>Drama: </strong><span id="drama">-</span></br>
+  &#129470<strong>Muckis: </strong><span id="muckis">-</span></br>
+  &#128126<strong>Chaos: </strong><span id="chaos">-</span></br>
+  </br>
+  <button onclick="statsErstellen()">Stats erstellen</button>
+</div>
+
+<script>
+  function statsErstellen() {
+    document.getElementById("drama").textContent =
+      Math.floor(Math.random() * 11);
+
+    document.getElementById("muckis").textContent =
+      Math.floor(Math.random() * 11);
+
+    document.getElementById("chaos").textContent =
+      Math.floor(Math.random() * 11);
+  }
+</script>
 </div>
 </div>
 </div>
@@ -1525,7 +1548,7 @@ perchance.org funktioniert aber am besten auf Englisch. Übrigens wie jede ander
 <li id="quelle-17"><strong>Melodika</strong>: Technisches Museum Wien, <em>Kindermelodika Frör</em>, Inventarnummer 57414. <a href="https://www.technischesmuseum.at/museum/online-sammlung#sammlung/ui/%7B%22search%22%3A%22kindermelodika%20fr%C3%B6r%22%2C%22hasMedia%22%3A%22true%22%7D/objectdetail/241620" target="_blank" rel="noopener">Online-Sammlung</a></li>
 <li id="quelle-18"><strong>Horn</strong>: Technisches Museum Wien, <em>Kornett à Piston Leopold Uhlmann</em>, Inventarnummer 15581. <a href="https://www.technischesmuseum.at/museum/online-sammlung#sammlung/ui/%7B%22search%22%3A%22kornett%20a%20piston%20leopold%22%2C%22hasMedia%22%3A%22true%22%7D/objectdetail/161029" target="_blank" rel="noopener">Online-Sammlung</a></li>
 </ol>
-
+<strong>* Diese Website wurde mit KI-Unterstützung programmiert</strong>
 </div>
 </section>
 
@@ -1537,6 +1560,7 @@ perchance.org funktioniert aber am besten auf Englisch. Übrigens wie jede ander
 <div>
 <h2>BODIES IN MAKING</h2>
 <p><strong>Technik – Körperbilder – Selbstermächtigung</strong></p>
+&#129309
 <p>Im Mittelpunkt des Vermittlungsprojekts „Bodies in Making“ steht die Auseinandersetzung mit historischen und aktuellen technologischen Entwicklungen – vom Spiegel über die Prothese bis hin zur generativen KI – und ihren wechselseitigen Einflüssen auf unsere Vorstellung von Körpernormen.</p>
 <p><a href="https://www.technischesmuseum.at/schule_und_kindergarten/bodies_in_making" target="_blank" rel="noopener">Bodies in Making | TMW</a></p>
 </div>
