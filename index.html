@@ -847,8 +847,23 @@ bei deiner Hausaufgabe gefragt - auch das sind generative KIs.</p>
 </div>
 
 <div class="card">
-<div class="quiz"><div class="quiz-question">Was könnte die Eingabe Ebene sein?</div><button type="button" class="quiz-option">Die Homepage<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><button type="button" class="quiz-option">Der Code<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><button type="button" class="quiz-option progress-on-click selected progress-task-complete">Der Prompt<div class="answer-text correct">✅ Richtig! Prompten bedeutet eingeben!</div></button><button type="button" class="quiz-option">Die Parameter<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><div class="quiz-result"><div class="answer-text correct">✅ Richtig! Prompten bedeutet eingeben!</div></div></div>
-
+<h2 style="margin-bottom: 20px;">Was könnte die Eingabe Ebene sein?</h2>
+<form onsubmit="event.preventDefault(); checkAnswer(this)">
+<label>
+<input name="answer" type="radio" value="wrong"/> Die Homepage
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="wrong"/> Der Code
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="correct"/> Der Prompt
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="wrong"/> Die Parameter
+      </label><br/><br/>
+<button type="submit">Antwort prüfen</button>
+<p class="result" style="font-weight: bold;"></p>
+</form>
 <script>
     function checkAnswer(form) {
       const answers = form.querySelectorAll('input[name="answer"]');
@@ -877,7 +892,55 @@ bei deiner Hausaufgabe gefragt - auch das sind generative KIs.</p>
 </div>
 
 <div class="card">
-<div class="quiz"><div class="quiz-question">Was könnte die Ausgabe Ebene sein?</div><button type="button" class="quiz-option progress-on-click selected progress-task-complete">Das generierte Bild<div class="answer-text correct">✅ Richtig! Die Ausgabe ist das Bild, das generiert wird!</div></button><button type="button" class="quiz-option">Die Zeit die es braucht<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><button type="button" class="quiz-option">Unsere Interpretation<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><button type="button" class="quiz-option">Der gesamte Prozess<div class="answer-text wrong">❌ Macht nix. Probiers gleich nochmal! 🙃</div></button><div class="quiz-result"><div class="answer-text correct">✅ Richtig! Die Ausgabe ist das Bild, das generiert wird!</div></div></div>
+<h2 style="margin-bottom: 20px;">Was könnte die Ausgabe Ebene sein?</h2>
+<form onsubmit="event.preventDefault();
+      (function(form) {
+        const answers = form.querySelectorAll('input[name=answer]');
+        const result = form.querySelector('.result');
+        let selected = false;
+
+        answers.forEach(answer => {
+          if (answer.checked) {
+            selected = true;
+            if (answer.value === 'correct') {
+              result.textContent = '✅ Richtig! Die Ausgabe ist das Bild, das generiert wird!';
+              result.style.color = 'green';
+            } else {
+              result.textContent = '❌ Macht nix. Probiers gleich nochmal! 🙃';
+              result.style.color = 'red';
+            }
+          }
+        });
+
+        if (!selected) {
+          result.textContent = '⚠️ Bitte wähle eine Antwort aus.';
+          result.style.color = 'orange';
+        }
+      })(this);
+    ">
+<label>
+<input name="answer" type="radio" value="correct"/>
+        Das generierte Bild
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="wrong"/>
+        Die Zeit die es braucht
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="wrong"/>
+        Unsere Interpretation
+      </label><br/>
+<label>
+<input name="answer" type="radio" value="wrong"/>
+        Der gesamte Prozess
+      </label><br/><br/>
+<button type="submit">Antwort prüfen</button>
+<p class="result" style="font-weight: bold;"></p>
+</form>
+
+
+</div>
+</div>
 
 
 
